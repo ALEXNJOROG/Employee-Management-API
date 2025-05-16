@@ -1,15 +1,18 @@
-# Employee-Management-API
 # Employee Management API
 
 This is a simple REST API for managing employees using Flask and SQLite.
 
-##  Setup Instructions
+#  Setup Instructions
 
-1. **Clone the repository**:
-   git clone <your-repo-url>
-   cd employee_api
+1. ## Clone the repository ##:
+   git clone <repo-url>
 
-2. **Create and activate a virtual environment**:
+   cd Employee-Management-API
+
+2. ## Install Python and related packages ##:
+    sudo apt install python3.11 python3.11-venv python3.11-distutils
+
+3. ## Create and activate a virtual environment ##:
     python -m venv venv
     source venv/bin/activate 
 
@@ -17,27 +20,29 @@ This is a simple REST API for managing employees using Flask and SQLite.
     python3.11 -m venv venv311
     source venv311/bin/activate
 
-3. **Install dependencies**:
-    pip install -r requirements.txt
+4. ## Install project dependancies ##
+   pip install flask flask_sqlalchemy flask_marshmallow marshmallow-sqlalchemy
 
-4. **Run the app**:
+
+
+5. ## Run the app ##:
     python app.py
 
 
-5. **Test the API using Postman**:
+6. ## Test the API using Postman ##:
     Endpoints
     
-    POST /employees - Create employee
+    POST /employees - Create a new employee
 
-    GET /employees - List employees
+    GET /employees - List of employees
 
-    GET /employees/<id> - Get single employee
+    GET /employees/<id> - Get a single employee
 
-    PUT /employees/<id> - Update employee
+    PUT /employees/<id> - Update employee details
 
-    DELETE /employees/<id> - Delete employee
+    DELETE /employees/<id> - Delete an employee
 
-**CONTRIBUTORS**
+# CONTRIBUTORS #
 1. Alex Macharia.
    
 
