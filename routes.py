@@ -7,7 +7,8 @@ routes = Blueprint('routes', __name__)
 employee_schema = EmployeeSchema()
 employees_schema = EmployeeSchema(many=True)
 
-# POST /employees - Create a new employee
+# Create a new employee
+
 @routes.route("/employees", methods=["POST"])
 def create_employee():
     try:
@@ -22,7 +23,8 @@ def create_employee():
     except Exception as e:
         return jsonify({"error": str(e)}), 400
 
-# GET /employees - List all employees with pagination
+# List all employees 
+
 @routes.route("/employees", methods=["GET"])
 def get_employees():
     page = int(request.args.get("page", 1))
@@ -30,7 +32,8 @@ def get_employees():
     employees = Employee.query.paginate(page=page, per_page=limit, error_out=False).items
     return employees_schema.jsonify(employees), 200
 
-# GET /employees/:id - Get an employee by ID
+# Get an employee by ID
+
 @routes.route("/employees/<id>", methods=["GET"])
 def get_employee(id):
     emp = Employee.query.get(id)
@@ -38,7 +41,8 @@ def get_employee(id):
         return jsonify({"error": "Employee not found"}), 404
     return employee_schema.jsonify(emp), 200
 
-# PUT /employees/:id - Update an employee
+# Update employee details
+
 @routes.route("/employees/<id>", methods=["PUT"])
 def update_employee(id):
     emp = Employee.query.get(id)
@@ -59,7 +63,8 @@ def update_employee(id):
     except Exception as e:
         return jsonify({"error": str(e)}), 400
 
-# DELETE /employees/:id - Delete an employee
+# Delete an employee
+
 @routes.route("/employees/<id>", methods=["DELETE"])
 def delete_employee(id):
     emp = Employee.query.get(id)

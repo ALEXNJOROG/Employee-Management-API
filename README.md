@@ -29,7 +29,7 @@ This is a simple REST API for managing employees using Flask and SQLite.
     
     POST /employees - Create employee
 
-    GET /employees - List employees (supports ?page=1&limit=10)
+    GET /employees - List employees
 
     GET /employees/<id> - Get single employee
 
