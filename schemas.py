@@ -4,7 +4,7 @@ from models import Employee
 
 ma = Marshmallow()
 
-class EmployeeSchema(ma.SQLAlchemySchema):
+class EmployeeSchema(ma.SQLAlchemyAutoSchema):
     class Meta:
         model = Employee
         load_instance = True
@@ -16,7 +16,14 @@ class EmployeeSchema(ma.SQLAlchemySchema):
     salary = ma.auto_field(required=True)
     dateOfJoining = fields.Date(required=True)
 
-    @validates("salary")
-    def validate_salary(self, value):
-        if value <= 0:
-            raise ValidationError("Salary must be positive.")
+    #@validates("email")
+    #def validate_email(self, value):
+     #   if Employee.query.filter_by(email=value).first():
+        #    raise ValidationError("Email already exists")
+       # return value
+
+    #@validates("salary")
+    #def validate_salary(self, value):
+       # if value <= 0:
+        #    raise ValidationError("Salary must be positive.")
+        #return value

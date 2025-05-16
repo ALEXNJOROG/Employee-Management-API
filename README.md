@@ -11,13 +11,18 @@ This is a simple REST API for managing employees using Flask and SQLite.
 
 2. **Create and activate a virtual environment**:
     python -m venv venv
-    source venv/bin/activate  
+    source venv/bin/activate 
+
+
+    python3.11 -m venv venv311
+    source venv311/bin/activate
 
 3. **Install dependencies**:
     pip install -r requirements.txt
 
 4. **Run the app**:
     python app.py
+
 
 5. **Test the API using Postman**:
     Endpoints
